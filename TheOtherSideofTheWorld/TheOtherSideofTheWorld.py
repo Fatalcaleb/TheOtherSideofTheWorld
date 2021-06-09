@@ -6,9 +6,13 @@ if antipode_start == str("y"):
 	latitude = float(input())
 	print("What is the longitude of the destination?  ")
 	longitude = float(input())
+	
 
 	antipode_latitude = latitude.__mul__(int("-1"))
-	antipode_longitude = longitude.__mul__(int("-1"))
+	if longitude._le_(float("0")):
+		antipode_longitude = longitude.__add__(float("180"))
+	else:
+		antipode_longitude = longitude._sub_(float("180"))
 
 	print("The antipode of " + str(latitude) + " , " + str(longitude) + " is " + str(antipode_latitude) + " , " + str(antipode_longitude))
 	print()
@@ -22,7 +26,10 @@ if antipode_start == str("y"):
 		longitude = float(input())
 
 		antipode_latitude = latitude.__mul__(int("-1"))
-		antipode_longitude = longitude.__mul__(int("-1"))
+		if longitude._le_(float("0")):
+			antipode_longitude = longitude.__add__(float("180"))
+		else:
+			antipode_longitude = longitude._sub_(float("180"))
 
 		print("The antipode of " + str(latitude) + " , " + str(longitude) + " is " + str(antipode_latitude) + " , " + str(antipode_longitude))
 		print()
